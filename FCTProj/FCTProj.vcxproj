@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -115,6 +115,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Barbarian.cpp" />
+    <ClCompile Include="src\BlueMen.cpp" />
+    <ClCompile Include="src\Character.cpp" />
+    <ClCompile Include="src\HarryPotter.cpp" />
+    <ClCompile Include="src\InputValidationFunctions.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Medusa.cpp" />
+    <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\NumGenerator.cpp" />
+    <ClCompile Include="src\Queue.cpp" />
+    <ClCompile Include="src\QueueNode.cpp" />
+    <ClCompile Include="src\Tournament.cpp" />
+    <ClCompile Include="src\Vampire.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Barbarian.hpp" />
+    <ClInclude Include="src\BlueMen.hpp" />
+    <ClInclude Include="src\Character.hpp" />
+    <ClInclude Include="src\HarryPotter.hpp" />
+    <ClInclude Include="src\InputValidationFunctions.hpp" />
+    <ClInclude Include="src\Medusa.hpp" />
+    <ClInclude Include="src\Menu.hpp" />
+    <ClInclude Include="src\NumGenerator.hpp" />
+    <ClInclude Include="src\Queue.hpp" />
+    <ClInclude Include="src\QueueNode.hpp" />
+    <ClInclude Include="src\Tournament.hpp" />
+    <ClInclude Include="src\Vampire.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
