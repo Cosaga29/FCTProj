@@ -35,6 +35,10 @@ public:
 
 	void addCharacterToTeam(Queue*);
 
+	void checkForDeath();
+
+	void deathEvent(QueueNode* winner, QueueNode* loser);		
+
 
 };
 

@@ -10,8 +10,6 @@ bool Tournament::fasterCharacter(Character* first, Character* second) {
 
 
 
-
-
 /*
 Function that handles a single attack made in the game.
 
