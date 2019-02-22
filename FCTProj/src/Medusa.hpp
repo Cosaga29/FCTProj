@@ -25,7 +25,7 @@ private:
 
 public:
 
-	Medusa();
+	Medusa(std::string name = "");
 
 	int attack() override;
 

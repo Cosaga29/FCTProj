@@ -24,7 +24,7 @@ private:
 
 public:
 
-	Vampire();
+	Vampire(std::string name = "");
 
 	int attack() override;
 

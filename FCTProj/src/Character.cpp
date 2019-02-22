@@ -22,13 +22,15 @@ speed
 
 Speed is added to be used to determine who attacks first in a fight
 */
-Character::Character(int attack_power, int armor, int strength, int speed) :
+Character::Character(int attack_power, int armor, int strength, int speed, std::string user_name) :
 	attack_power(attack_power), armor(armor), strength(strength), speed(speed)
 {
+	name = user_name;
 }
 
 Character::~Character()
 {
+	std::cout << "deleted char" << std::endl;
 }
 
 int Character::getStrength() const
@@ -50,3 +52,10 @@ int Character::getSpeed() const
 {
 	return speed;
 }
+
+const std::string & Character::getName() const
+{
+	return name;
+}
+
+

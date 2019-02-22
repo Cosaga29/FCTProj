@@ -26,7 +26,7 @@ private:
 
 public:
 
-	BlueMen();
+	BlueMen(std::string name = "");
 
 	int attack() override;
 

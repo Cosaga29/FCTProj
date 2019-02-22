@@ -23,8 +23,8 @@ Param: (to base class constructor)
 	int speed
 
 */
-Vampire::Vampire() :
-	Character(12, 1, 18, 1)
+Vampire::Vampire(std::string name) :
+	Character(12, 1, 18, 1, name)
 {
 	characteristic = "Suave, debonair, but vicious and surprisingly resilient.";
 }

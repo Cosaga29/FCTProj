@@ -25,8 +25,8 @@ Param: (to base class constructor)
 	int speed
 
 */
-BlueMen::BlueMen() :
-	Character(10, 3, 12, 2)
+BlueMen::BlueMen(std::string name) :
+	Character(10, 3, 12, 2, name)
 {
 	characteristic =  "They are small, 6 inch tall, but fast and tough.\n";
 	characteristic += "They are hard to hit so they can take some damage. \n";

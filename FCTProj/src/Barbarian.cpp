@@ -24,8 +24,8 @@ Param: (to base class constructor)
 	int speed
 
 */
-Barbarian::Barbarian() :
-	Character(6, 0, 12, 3) 
+Barbarian::Barbarian(std::string name) :
+	Character(6, 0, 12, 3, name) 
 {
 	characteristic = "Think Conan or Hercules from the movies. Big sword, big muscles, bare torso.";
 }

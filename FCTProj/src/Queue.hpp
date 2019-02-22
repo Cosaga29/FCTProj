@@ -34,13 +34,17 @@ public:
 
 	void addBack(Character*);
 
-	Character* getFront();
+	void addBack(QueueNode*);
+
+	QueueNode* getFront();
 
 	void removeFront();
 
-	Character* removeNoDelete();
+	QueueNode* removeNoDelete();
 
 	void printQueue();
+
+	void moveFrontToBack();
 
 
 };

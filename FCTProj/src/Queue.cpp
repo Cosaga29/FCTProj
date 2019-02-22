@@ -102,12 +102,70 @@ void Queue::addBack(Character* data)
 
 }
 
+
+/*
+Add a queueNode element to the back of the queue.
+
+Three cases:
+	0 element case:
+	simply add new node and set head pointer
+
+
+1 element case:
+	Node is added after head, update head next, prev pointers
+	and update new node next and prev pointers to create a loop
+
+
+2 element case:
+	Find the last node in the queue, (the node that is not the head that points to the head)
+	detach node from head and head from node
+	insert node between last node and head
+	reattach nodes to the node added
+
+
+*/
+void Queue::addBack(QueueNode* toAdd)
+{
+	if (head == nullptr) {			//0 elements
+		head = toAdd;	//simply add head
+		return;
+	}
+
+	if (head->next == nullptr) { //1 element case
+		//Add new node who's prev and next are the head
+		toAdd->next = head;
+		toAdd->prev = head;
+
+		head->next = toAdd;		//set head next to new node
+		head->prev = toAdd;		//set head prev to new node
+		return;
+	}
+
+	//2 or more element case:
+	QueueNode *currentNode = head->next;
+
+	while (currentNode->next != head) {	//search for last node in queue
+		//find last node in queue
+		currentNode = currentNode->next;
+	}
+
+	//current node is now pointer to last node in queue.
+
+	//add new node whos next is head and prev was the last node in the list
+	toAdd->next = head;
+	toAdd->prev = currentNode;
+
+	//modify old nodes to point to the new node added
+	currentNode->next = toAdd;
+	head->prev = toAdd;
+}
+
 /*
 Function to return the front value of the list (head)
 */
-Character* Queue::getFront()
+QueueNode* Queue::getFront()
 {
-	return head->data.get();
+	return head;
 }
 
 /*
@@ -174,17 +232,18 @@ Same logic as remove, but lacks delete functionality. Returns a pointer to the o
 This is reserved for when the resource will still be tracked by another list and managed by 
 the tournament class.
 */
-Character* Queue::removeNoDelete()
+QueueNode* Queue::removeNoDelete()
 {
 	if (isEmpty()) {		//double check that queue isn't emppty
 		std::cout << "Queue is empty, cannot remove" << std::endl;
-		return;
+		return nullptr;
 	}
 
 
 	if (head->next == nullptr) {	//1 element removal
+		QueueNode* temp = head;
 		head = nullptr;
-		return;
+		return temp;
 	}
 
 
@@ -205,7 +264,7 @@ Character* Queue::removeNoDelete()
 		head->prev = nullptr;
 	}
 
-	return temp->data.get();			//return pointer to character being removed from the list
+	return temp;			//return pointer to character being removed from the list
 }
 
 
@@ -223,10 +282,23 @@ void Queue::printQueue()
 
 	QueueNode* currentNode = head;	//create pointer to move through queue
 	do {
-		std::cout << currentNode->data << " ";
+		std::cout << (currentNode->data.get())->getCharacteristic() << std::endl;
+		std::cout << currentNode->data.get() << std::endl;
+
 		currentNode = currentNode->next;
 	} while (currentNode != head && currentNode != nullptr);	//while the currentNode is valid and hasn't reached the head again, print the value
 
 	
 	std::cout << std::endl;
+}
+
+/*
+Function to move the front of the list to the back of the list
+
+NON-DESTRUCTIVE
+*/
+void Queue::moveFrontToBack()
+{
+	QueueNode* toAdd = removeNoDelete();	//remove node from front of queue without deleting
+	addBack(toAdd);							//add removed node to back of queue 
 }

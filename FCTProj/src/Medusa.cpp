@@ -24,8 +24,8 @@ Param: (to base class constructor)
 	int speed
 
 */
-Medusa::Medusa() :
-	Character(6, 3, 8, 4)
+Medusa::Medusa(std::string name) :
+	Character(6, 3, 8, 4, name)
 {
 	characteristic = "Scrawny lady with snakes for hair which helps her during combat. Just don’t look at her!";
 }

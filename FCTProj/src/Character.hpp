@@ -38,11 +38,12 @@ protected:
 	int speed;
 
 	std::string characteristic;
+	std::string name;
 
 
 public:
 
-	Character(int, int, int, int);
+	Character(int, int, int, int, std::string);
 
 	virtual int attack() = 0; //return damage from attack
 
@@ -60,6 +61,11 @@ public:
 
 	int getSpeed() const; //return speed
 
+	const std::string& getName() const;
+
+
+	//TODO:: ADD RECOVERY SCHEME FOR CHARACTERS
+	//virtual void recover() = 0;
 
 };
 

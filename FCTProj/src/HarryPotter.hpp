@@ -32,7 +32,7 @@ private:
 
 public:
 
-	HarryPotter();
+	HarryPotter(std::string name = "");
 
 	int attack() override;
 

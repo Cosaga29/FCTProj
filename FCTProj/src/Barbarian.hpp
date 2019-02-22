@@ -18,6 +18,8 @@
 #include "Character.hpp"
 
 
+#define MAX_STRENGTH
+
 class Barbarian : public Character {
 
 private:
@@ -26,7 +28,7 @@ private:
 
 public:
 
-	Barbarian();
+	Barbarian(std::string namne = "");
 
 	int attack() override;
 

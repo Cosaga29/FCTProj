@@ -2,6 +2,8 @@
 #define TOURNAMENT_HPP
 
 #include <iostream>
+#include "Menu.hpp"
+#include "InputValidationFunctions.hpp"
 
 #include "Character.hpp"
 #include "Queue.hpp"
@@ -16,28 +18,40 @@
 class Tournament {
 
 
-private:
+public://testing change to private
 
 	int team1Size;
 	int team2Size;
 
 	Queue* team1List;
 	Queue* team2List;
+	Queue* loserList;
+
+	void healWinner(QueueNode*);
 
 
 public:
+
+	Tournament();
+
+	~Tournament();
+
+	void buildTeams();
 	
 	bool fasterCharacter(Character* first, Character* second);
 
-	void stepAttack(Character* attacker, Character* defender);
+	bool stepAttack(QueueNode* attacker, QueueNode* defender);
 
-	Character* selectChar(character_type charCode);
+	Character* selectChar(character_type charCode, std::string name);
 
-	void addCharacterToTeam(Queue*);
+	bool transferCharacter(Queue*, Queue*, QueueNode*);
 
-	void checkForDeath();
+	void printTeam();
 
-	void deathEvent(QueueNode* winner, QueueNode* loser);		
+	void start();
+
+
+
 
 
 };

@@ -34,8 +34,8 @@ Param: (to base class constructor)
 
 	sets death count to 0 - death count is used to track if harry potter has died once already
 */
-HarryPotter::HarryPotter() :
-	Character(6, 0, 10, 3)
+HarryPotter::HarryPotter(std::string name) :
+	Character(6, 0, 10, 3, name)
 {
 	characteristic = "Yer a wizard Harry.";
 	m_deathCount = 0;

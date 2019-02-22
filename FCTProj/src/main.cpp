@@ -13,7 +13,7 @@
 ******************************************/
 
 #include <iostream>
-
+#include "Queue.hpp"
 #include "NumGenerator.hpp"
 #include "Character.hpp"
 #include "Barbarian.hpp"
@@ -31,9 +31,43 @@
 
 int main() {
 
+	
+
+
 	srand(time(NULL));	//seed random number generator
 
 
+	Queue myQueue;
+	Character* myChar = new Medusa("1");
+	Character* myChar1 = new Medusa("2");
+
+
+	myQueue.addBack(myChar);
+	myQueue.addBack(myChar1);
+
+	myQueue.printQueue();
+
+	
+	myQueue.moveFrontToBack();
+
+	myQueue.printQueue();
+
+
+
+	//myQueue.printQueue();
+
+	
+	//Tournament tourney;
+
+	//tourney.printTeam();
+
+	//tourney.transferCharacter(tourney.team1List, tourney.loserList, tourney.team1List->getFront());
+
+	//tourney.printTeam();
+
+
+	std::cin.ignore(24474, '\n');
+	std::cin.get();
 
 
 
