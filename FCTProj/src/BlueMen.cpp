@@ -2,7 +2,7 @@
 * Author: Martin Edmunds
 * Email: edmundsm@oregonstate.edu
 * Date: 02/07/19
-* Project: Project 3
+* Project: Project 3/4
 * Description: BlueMen class
 *
 * Implements virtual attack and defend methods for the BlueMen class.

@@ -32,8 +32,6 @@
 int main() {
 
 	
-
-
 	srand(time(NULL));	//seed random number generator
 
 	Tournament tourney;

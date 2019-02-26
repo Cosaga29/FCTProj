@@ -5,7 +5,7 @@
 * Author: Martin Edmunds
 * Email: edmundsm@oregonstate.edu
 * Date: 02/07/19
-* Project: Project 3
+* Project: Project 3/4
 * Description: Vampire class
 *
 * Implements virtual attack and defend methods for the Vampire class.

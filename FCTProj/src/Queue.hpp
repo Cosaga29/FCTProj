@@ -4,8 +4,8 @@
 /*****************************************
 * Author: Martin Edmunds
 * Email: edmundsm@oregonstate.edu
-* Project: Lab 7
-* Date: 02/20/19
+* Project: Project 4
+* Date: 02/25/19
 * Description: Function definitions for the queue
 * class. The class models a queue data type structure
 * that allows elements of type int to be pushed onto the queue,

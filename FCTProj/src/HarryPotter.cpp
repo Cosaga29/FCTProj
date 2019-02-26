@@ -2,7 +2,7 @@
 * Author: Martin Edmunds
 * Email: edmundsm@oregonstate.edu
 * Date: 02/07/19
-* Project: Project 3
+* Project: Project 3/4
 * Description: Harry Potter class
 *
 * Implements virtual attack and defend methods for the Harry Potter class.

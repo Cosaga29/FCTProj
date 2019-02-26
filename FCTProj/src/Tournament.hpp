@@ -1,6 +1,21 @@
 #ifndef TOURNAMENT_HPP
 #define TOURNAMENT_HPP
 
+/*****************************************
+* Author: Martin Edmunds
+* Email: edmundsm@oregonstate.edu
+* Project: Project 4
+* Date: 02/25/19
+* Description:
+
+Tournament class:
+	Defines a tournament object that is used to
+	manage a tournament of character objects.
+	The tournament uses a circular queue list data
+	structor to manage the order and rounds of the tournament.
+
+******************************************/
+
 #include <iostream>
 #include "Menu.hpp"
 #include "InputValidationFunctions.hpp"

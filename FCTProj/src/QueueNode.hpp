@@ -4,13 +4,13 @@
 /*****************************************
 * Author: Martin Edmunds
 * Email: edmundsm@oregonstate.edu
-* Project: Lab 7
-* Date: 02/20/19
+* Project: Project 4
+* Date: 02/25/19
 * Description: Definitions for QueueNode struct
 * QueueNode holds
 	reference to next node
 	reference to prev node
-	value
+	data - smart pointer to character object
 *
 ******************************************/
 
