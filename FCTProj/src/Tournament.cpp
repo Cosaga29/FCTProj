@@ -34,7 +34,7 @@ void Tournament::buildTeams()
 	characterSelection.addPrompt("Vampire");
 	
 	
-	team1Size = validateInputGreaterThan(0, "Enter number of fighters for team 1.");
+	team1Size = validateInputGreaterThan(0, "Enter number of fighters for team 1 ");
 
 	team2Size = validateInputGreaterThan(0, "Enter number of fighters for team 2 ");
 
@@ -255,7 +255,7 @@ bool Tournament::start()
 		team1List->getFront()->data.get()->getClass();
 		std::cout << "\t" << team1List->getFront()->data.get()->getName() << "\n\t";
 
-		std::cout << "\n\tTEAM 2:\n\t";
+		std::cout << "\n\tTEAM 2: \n\t";
 		team2List->getFront()->data.get()->getClass();
 		std::cout << "\t" << team2List->getFront()->data.get()->getName() << "\n\t\n\n" << std::endl;
 
@@ -347,7 +347,7 @@ bool Tournament::start()
 
 
 	//prompt user to display loser contents
-	std::cout << "Would you like to display the loser contents? " << std::endl;
+	std::cout << "Would you like to display the loser contents? (y/n)" << std::endl;
 	char userChoice = validateInputYN();
 	if (userChoice == 'y') {
 		loserList->printQueueR();	//print loser Queue in reverse (last added is first printed)
@@ -358,9 +358,13 @@ bool Tournament::start()
 	resetResources();
 
 	//prompt user to play again
-	std::cout << "Would you like to play again? " << std::endl;
-	userChoice = validateInputYN();
-	if (userChoice == 'y') {
+	Menu exitMenu;
+	exitMenu.addPrompt("Play again");
+	exitMenu.addPrompt("Exit");
+
+	std::cout << exitMenu.getExitCode() << std::endl;
+	
+	if ((exitMenu.getUserChoice() + 1) == exitMenu.getExitCode()) {
 		return true;
 	}
 	else {
