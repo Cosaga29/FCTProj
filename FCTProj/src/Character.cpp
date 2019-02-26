@@ -30,7 +30,6 @@ Character::Character(int attack_power, int armor, int strength, int speed, std::
 
 Character::~Character()
 {
-	std::cout << "deleted char" << std::endl;
 }
 
 int Character::getStrength() const

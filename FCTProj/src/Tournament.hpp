@@ -14,6 +14,9 @@
 #include "HarryPotter.hpp"
 #include "NumGenerator.hpp"
 
+#define WIN_VALUE	2
+#define LOSE_VALUE -1
+
 
 class Tournament {
 
@@ -27,8 +30,15 @@ public://testing change to private
 	Queue* team2List;
 	Queue* loserList;
 
-	void healWinner(QueueNode*);
+	void buildTeams();
 
+	bool stepAttack(QueueNode* attacker, QueueNode* defender);
+
+	Character* selectChar(character_type charCode, std::string name);
+
+	bool transferCharacter(Queue*, Queue*);
+
+	void resetResources();
 
 public:
 
@@ -36,23 +46,9 @@ public:
 
 	~Tournament();
 
-	void buildTeams();
-	
-	bool fasterCharacter(Character* first, Character* second);
-
-	bool stepAttack(QueueNode* attacker, QueueNode* defender);
-
-	Character* selectChar(character_type charCode, std::string name);
-
-	bool transferCharacter(Queue*, Queue*, QueueNode*);
-
 	void printTeam();
 
-	void start();
-
-
-
-
+	bool start();
 
 };
 

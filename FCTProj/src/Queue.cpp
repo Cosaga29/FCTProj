@@ -37,6 +37,9 @@ Queue::~Queue()
 
 }
 
+
+
+
 /*
 Check if the head value has been initialized to a QueueNode.
 
@@ -242,6 +245,8 @@ QueueNode* Queue::removeNoDelete()
 
 	if (head->next == nullptr) {	//1 element removal
 		QueueNode* temp = head;
+		temp->next = nullptr;
+		temp->prev = nullptr;
 		head = nullptr;
 		return temp;
 	}
@@ -264,6 +269,8 @@ QueueNode* Queue::removeNoDelete()
 		head->prev = nullptr;
 	}
 
+	temp->next = nullptr;
+	temp->prev = nullptr;
 	return temp;			//return pointer to character being removed from the list
 }
 
@@ -293,6 +300,37 @@ void Queue::printQueue()
 }
 
 /*
+Function that loops through the queue printing the values of nodes in reverse
+*/
+void Queue::printQueueR()
+{
+	if (isEmpty()) {	//0 elements
+		std::cout << "Empty list" << std::endl;
+		return;
+	}
+
+
+	QueueNode*currentNode = head->prev;
+	if (currentNode == nullptr) {	//1 element
+		//print head
+		head->data.get()->getClass();
+		std::cout << head->data.get()->getName() << std::endl;
+		return;
+	}
+
+	do {	//2 or more elements
+		currentNode->data.get()->getClass();
+		std::cout << (currentNode->data.get()->getName()) << std::endl;
+
+		currentNode = currentNode->prev;
+	} while (currentNode != head->prev && currentNode != nullptr);
+
+	std::cout << std::endl;
+
+
+}
+
+/*
 Function to move the front of the list to the back of the list
 
 NON-DESTRUCTIVE
@@ -300,5 +338,17 @@ NON-DESTRUCTIVE
 void Queue::moveFrontToBack()
 {
 	QueueNode* toAdd = removeNoDelete();	//remove node from front of queue without deleting
-	addBack(toAdd);							//add removed node to back of queue 
+	if (toAdd != nullptr) {
+		addBack(toAdd);							//add removed node to back of queue 
+	}
+}
+
+/*
+Cleans the queue similar to the distructor
+*/
+void Queue::clearQueue()
+{
+	while (!isEmpty()) {	//check if queue is empty, if not, rmeove the front
+		removeFront();
+	}
 }

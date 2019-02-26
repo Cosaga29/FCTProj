@@ -24,7 +24,7 @@ Param: (to base class constructor)
 
 */
 Vampire::Vampire(std::string name) :
-	Character(12, 1, 18, 1, name)
+	Character(12, 1, MAX_STRENGTH, 1, name)
 {
 	characteristic = "Suave, debonair, but vicious and surprisingly resilient.";
 }
@@ -96,6 +96,23 @@ void Vampire::defend(int damage)
 	}
 	std::cout << "Defenders strength: " << strength << std::endl;
 	
+}
+
+
+/*
+Since the vampire class is already very, very strong his recovery function
+is limited compared to the other characters. He only recovers 15-25% of hp.
+*/
+void Vampire::recover()
+{
+	double percentRecovery = roll(1, 10) + 15; //(roll 15-25)
+	percentRecovery /= 100; //roll - 0.15-0.25
+
+
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 15-25% of max health
+	if (strength >= MAX_STRENGTH) {	//prevent overhealing
+		strength = MAX_STRENGTH;
+	}
 }
 
 Vampire::~Vampire()

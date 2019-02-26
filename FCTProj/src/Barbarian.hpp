@@ -17,8 +17,8 @@
 
 #include "Character.hpp"
 
-
-#define MAX_STRENGTH
+#define MAX_STRENGTH			12
+#define OVER_STRENGTH_FACTOR	3
 
 class Barbarian : public Character {
 
@@ -35,6 +35,8 @@ public:
 	void defend(int) override;
 
 	void getClass() const override;
+
+	void recover() override;
 
 	~Barbarian();
 };

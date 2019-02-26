@@ -26,7 +26,7 @@ Param: (to base class constructor)
 
 */
 BlueMen::BlueMen(std::string name) :
-	Character(10, 3, 12, 2, name)
+	Character(10, 3, MAX_STRENGTH, 2, name)
 {
 	characteristic =  "They are small, 6 inch tall, but fast and tough.\n";
 	characteristic += "They are hard to hit so they can take some damage. \n";
@@ -101,6 +101,23 @@ int BlueMen::calcMobDefenseRolls() const
 	int defense_rolls = std::ceil((double)strength / 4.0);
 
 	return defense_rolls;
+}
+
+/*
+Recovery function for blue men, since they have a decent amount of armor,
+the recovery function simply heals between 15-35% of max health. Caps at max strength.
+*/
+void BlueMen::recover()
+{
+	double percentRecovery = roll(1, 20) + 15; //(roll 15-35)
+	percentRecovery /= 100; //roll - 0.15-0.35
+
+
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 15-35% of max health
+	if (strength >= MAX_STRENGTH) {	//prevent overhealing
+		strength = MAX_STRENGTH;
+	}
+
 }
 
 BlueMen::~BlueMen()

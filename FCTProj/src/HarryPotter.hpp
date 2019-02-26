@@ -18,7 +18,7 @@
 
 #define LIVES 1;
 
-
+#define MAX_STRENGTH 10
 
 
 class HarryPotter : public Character {
@@ -39,6 +39,8 @@ public:
 	void defend(int) override;
 
 	void getClass() const override;
+
+	void recover() override;
 
 	~HarryPotter();
 };

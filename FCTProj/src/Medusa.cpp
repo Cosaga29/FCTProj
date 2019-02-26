@@ -25,7 +25,7 @@ Param: (to base class constructor)
 
 */
 Medusa::Medusa(std::string name) :
-	Character(6, 3, 8, 4, name)
+	Character(6, 3, MAX_STRENGTH, 4, name)
 {
 	characteristic = "Scrawny lady with snakes for hair which helps her during combat. Just don’t look at her!";
 }
@@ -92,6 +92,25 @@ void Medusa::defend(int damage)
 		strength -= damage_taken;
 	}
 	std::cout << "Defenders strength: " << strength << std::endl;
+}
+
+/*
+Medusa heals for a decent amount 30-50% of max health, but has a similar overhealing
+ability to the barbarian class. Her strength from recovery is capped at 2x base (16)
+*/
+void Medusa::recover()
+{
+	double percentRecovery = roll(1, 20) + 30; //(roll 30-50)
+	percentRecovery /= 100; //roll - 0.3-0.5
+
+
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 20-50% of max health
+
+	//MEDUSA IS ALLOWED TO OVERHEAL
+	//Able to overheal to a limit of 2x her base strength (max 16 strength)
+	if (strength >= MAX_STRENGTH * OVER_STRENGTH_FACTOR) {	
+		strength = MAX_STRENGTH * OVER_STRENGTH_FACTOR;
+	}
 }
 
 Medusa::~Medusa()

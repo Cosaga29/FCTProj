@@ -16,7 +16,8 @@
 
 #include "Character.hpp"
 
-
+#define MAX_STRENGTH 8
+#define OVER_STRENGTH_FACTOR 2
 
 class Medusa : public Character {
 
@@ -32,6 +33,8 @@ public:
 	void getClass() const override;
 
 	void defend(int) override;
+
+	void recover() override;
 
 	~Medusa();
 };

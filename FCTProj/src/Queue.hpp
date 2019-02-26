@@ -44,7 +44,11 @@ public:
 
 	void printQueue();
 
+	void printQueueR();
+
 	void moveFrontToBack();
+
+	void clearQueue();
 
 
 };

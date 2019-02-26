@@ -18,6 +18,7 @@
 #include "Character.hpp"
 #include <cmath>
 
+#define MAX_STRENGTH 12
 
 class BlueMen : public Character {
 
@@ -35,6 +36,8 @@ public:
 	void getClass() const override;
 
 	int calcMobDefenseRolls() const;
+
+	void recover() override;
 
 	~BlueMen();
 };

@@ -63,9 +63,7 @@ public:
 
 	const std::string& getName() const;
 
-
-	//TODO:: ADD RECOVERY SCHEME FOR CHARACTERS
-	//virtual void recover() = 0;
+	virtual void recover() = 0;
 
 };
 

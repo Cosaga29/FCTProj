@@ -16,6 +16,8 @@
 
 #include "Character.hpp"
 
+#define MAX_STRENGTH 18
+
 class Vampire : public Character {
 
 
@@ -31,6 +33,8 @@ public:
 	void getClass() const override;
 
 	void defend(int) override;
+
+	void recover() override;
 
 	~Vampire();
 };
