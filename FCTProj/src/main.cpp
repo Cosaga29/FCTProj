@@ -1,14 +1,10 @@
 /*****************************************
 * Author: Martin Edmunds
 * Email: edmundsm@oregonstate.edu
-* Date: 02/07/19
-* Project: Project 3
+* Date: 02/27/19
+* Project: Project 4
 * Description: Main function
 *
-* Creates a vector to manage the order of attacks in a given round.
-* Position 0 is the character to attack first, 1 to attack second
-*
-* The vector consists of character pointers sorted via speed
 *
 ******************************************/
 
