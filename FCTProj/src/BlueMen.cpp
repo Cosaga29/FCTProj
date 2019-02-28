@@ -26,7 +26,7 @@ Param: (to base class constructor)
 
 */
 BlueMen::BlueMen(std::string name) :
-	Character(10, 3, MAX_STRENGTH, 2, name)
+	Character(10, 3, MAX_STRENGTH_BLUE, 2, name)
 {
 	characteristic =  "They are small, 6 inch tall, but fast and tough.\n";
 	characteristic += "They are hard to hit so they can take some damage. \n";
@@ -113,9 +113,9 @@ void BlueMen::recover()
 	percentRecovery /= 100; //roll - 0.15-0.35
 
 
-	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 15-35% of max health
-	if (strength >= MAX_STRENGTH) {	//prevent overhealing
-		strength = MAX_STRENGTH;
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH_BLUE)); //heal for 15-35% of max health
+	if (strength >= MAX_STRENGTH_BLUE) {	//prevent overhealing
+		strength = MAX_STRENGTH_BLUE;
 	}
 
 }

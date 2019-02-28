@@ -25,7 +25,7 @@ Param: (to base class constructor)
 
 */
 Barbarian::Barbarian(std::string name) :
-	Character(6, 0, MAX_STRENGTH, 3, name) 
+	Character(6, 0, MAX_STRENGTH_BARB, 3, name) 
 {
 	characteristic = "Think Conan or Hercules from the movies. Big sword, big muscles, bare torso.";
 }
@@ -97,9 +97,9 @@ void Barbarian::recover()
 	percentRecovery /= 100; //roll - 0.8-1.2
 
 
-	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 80-120% of max health
-	if (strength >= MAX_STRENGTH * OVER_STRENGTH_FACTOR) {	//keep stength under 3xbase
-		strength = MAX_STRENGTH * OVER_STRENGTH_FACTOR;
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH_BARB)); //heal for 80-120% of max health
+	if (strength >= MAX_STRENGTH_BARB * OVER_STRENGTH_FACTOR) {	//keep stength under 3xbase
+		strength = MAX_STRENGTH_BARB * OVER_STRENGTH_FACTOR;
 	}
 
 }

@@ -35,7 +35,7 @@ Param: (to base class constructor)
 	sets death count to 0 - death count is used to track if harry potter has died once already
 */
 HarryPotter::HarryPotter(std::string name) :
-	Character(6, 0, MAX_STRENGTH, 3, name)
+	Character(6, 0, MAX_STRENGTH_HARRY, 3, name)
 {
 	characteristic = "Yer a wizard Harry.";
 	m_deathCount = 0;
@@ -119,9 +119,9 @@ void HarryPotter::recover()
 	percentRecovery /= 100; //roll - 0.25-0.65
 
 
-	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 25-65% of max health
-	if (strength >= MAX_STRENGTH) {	//prevent overhealing
-		strength = MAX_STRENGTH;
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH_HARRY)); //heal for 25-65% of max health
+	if (strength >= MAX_STRENGTH_HARRY) {	//prevent overhealing
+		strength = MAX_STRENGTH_HARRY;
 	}
 }
 

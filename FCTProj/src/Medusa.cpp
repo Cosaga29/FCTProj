@@ -25,7 +25,7 @@ Param: (to base class constructor)
 
 */
 Medusa::Medusa(std::string name) :
-	Character(6, 3, MAX_STRENGTH, 4, name)
+	Character(6, 3, MAX_STRENGTH_MEDUSA , 4, name)
 {
 	characteristic = "Scrawny lady with snakes for hair which helps her during combat. Just don’t look at her!";
 }
@@ -104,12 +104,12 @@ void Medusa::recover()
 	percentRecovery /= 100; //roll - 0.3-0.5
 
 
-	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 20-50% of max health
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH_MEDUSA )); //heal for 20-50% of max health
 
 	//MEDUSA IS ALLOWED TO OVERHEAL
 	//Able to overheal to a limit of 2x her base strength (max 16 strength)
-	if (strength >= MAX_STRENGTH * OVER_STRENGTH_FACTOR) {	
-		strength = MAX_STRENGTH * OVER_STRENGTH_FACTOR;
+	if (strength >= MAX_STRENGTH_MEDUSA  * OVER_STRENGTH_FACTOR) {	
+		strength = MAX_STRENGTH_MEDUSA  * OVER_STRENGTH_FACTOR;
 	}
 }
 

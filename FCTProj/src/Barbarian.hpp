@@ -17,7 +17,7 @@
 
 #include "Character.hpp"
 
-#define MAX_STRENGTH			12
+#define MAX_STRENGTH_BARB		12
 #define OVER_STRENGTH_FACTOR	3
 
 class Barbarian : public Character {

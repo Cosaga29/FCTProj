@@ -16,7 +16,7 @@
 
 #include "Character.hpp"
 
-#define MAX_STRENGTH 8
+#define MAX_STRENGTH_MEDUSA	 8
 #define OVER_STRENGTH_FACTOR 2
 
 class Medusa : public Character {

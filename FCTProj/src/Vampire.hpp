@@ -16,7 +16,7 @@
 
 #include "Character.hpp"
 
-#define MAX_STRENGTH 18
+#define MAX_STRENGTH_VAMP 18
 
 class Vampire : public Character {
 

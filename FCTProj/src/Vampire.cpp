@@ -24,7 +24,7 @@ Param: (to base class constructor)
 
 */
 Vampire::Vampire(std::string name) :
-	Character(12, 1, MAX_STRENGTH, 1, name)
+	Character(12, 1, MAX_STRENGTH_VAMP, 1, name)
 {
 	characteristic = "Suave, debonair, but vicious and surprisingly resilient.";
 }
@@ -109,9 +109,9 @@ void Vampire::recover()
 	percentRecovery /= 100; //roll - 0.15-0.25
 
 
-	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH)); //heal for 15-25% of max health
-	if (strength >= MAX_STRENGTH) {	//prevent overhealing
-		strength = MAX_STRENGTH;
+	strength += (percentRecovery * static_cast<double>(MAX_STRENGTH_VAMP)); //heal for 15-25% of max health
+	if (strength >= MAX_STRENGTH_VAMP) {	//prevent overhealing
+		strength = MAX_STRENGTH_VAMP;
 	}
 }
 

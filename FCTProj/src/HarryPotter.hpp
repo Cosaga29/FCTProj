@@ -18,7 +18,7 @@
 
 #define LIVES 1;
 
-#define MAX_STRENGTH 10
+#define MAX_STRENGTH_HARRY 10
 
 
 class HarryPotter : public Character {

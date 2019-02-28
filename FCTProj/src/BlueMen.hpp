@@ -18,7 +18,7 @@
 #include "Character.hpp"
 #include <cmath>
 
-#define MAX_STRENGTH 12
+#define MAX_STRENGTH_BLUE 12
 
 class BlueMen : public Character {
 
